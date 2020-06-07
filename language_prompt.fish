@@ -1,6 +1,8 @@
 function language_prompt --description 'Write out language version prompt'
     # Language
 
+    set -q language_prompt_last_pwd; or set -g language_prompt_last_pwd ""
+
     set __language_prompt \
         (php_prompt) \
         (laravel_prompt) \
@@ -85,7 +87,8 @@ end
 function python_prompt
     type -q python3; or return
 
-    if not test (count *.py) -gt 0
+    if not test (count *.py) -gt 0 \
+        -o -f ./.style.yapf
         return
     end
 
