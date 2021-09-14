@@ -40,7 +40,7 @@ function laravel_prompt
     end
 
     if test $language_prompt_last_pwd != (pwd)
-        set -g language_prompt_laravel_version (php artisan -V | grep -o "[0-9][0-9.]*" 2> /dev/null)
+        set -g language_prompt_laravel_version (php -d error_reporting="E_ERROR" artisan -V 2> /dev/null | grep -o "[0-9][0-9.]*" 2> /dev/null)
     end
 
     set_color magenta
