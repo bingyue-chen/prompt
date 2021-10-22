@@ -53,7 +53,7 @@ function fish_prompt --description 'Write out the prompt'
             set branch_glyph "$branch_glyph …"
         end
 
-        set -l git_ahead (command git rev-list --left-right --count 'HEAD..master' ^ /dev/null | awk '
+        set -l git_ahead (command git rev-list --left-right --count 'HEAD..master' 2> /dev/null | awk '
             $1 > 0 { printf("↑") }
             $2 > 0 { printf("↓") }
         ')
