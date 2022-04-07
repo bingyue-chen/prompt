@@ -5,8 +5,3 @@
 
 ## greeting txt path
 > ~
-
-## dependence
-- fishpkg/fish-git-util
-- franciscolourenco/done
-- jorgebucaran/fish-nvm
